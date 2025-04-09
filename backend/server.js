@@ -9,11 +9,9 @@ const app = express();
 
 const port = 5000;
 
-app.get('/products', (req, res) => {
-  res.send('res.products');
+app.post("/products", (req, res) => {
+  res.send("Product created");
 });
-
-console.log(process.env.MONGO_URI);
 
 app.listen(5000, () => {
   connectDB();
