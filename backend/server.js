@@ -4,15 +4,13 @@ import { connectDB } from './config/db.js';
 
 dotenv.config();
 
+const app = express();
+const port = process.env.PORT || 5000;
 
-const app = e    xpress();
-const port = process   .env.PORT || 5000;
+app.use(express.json());
 
-app.use (express.json());
-
-app.post("/products", (req, res) => {
-  const product = req.body; 
-
+app.post('/products', (req, res) => {
+  const product = req.body;
 });
 
 app.listen(port, () => {
