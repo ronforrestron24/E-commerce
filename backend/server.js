@@ -5,15 +5,17 @@ import { connectDB } from './config/db.js';
 dotenv.config();
 
 
-const app = express();
+const app = e    xpress();
+const port = process   .env.PORT || 5000;
 
-const port = 5000;
+app.use (express.json());
 
 app.post("/products", (req, res) => {
-  res.send("Product created");
+  const product = req.body; 
+
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   connectDB();
   console.log('MongoDB connected');
   console.log(`Server is running on ${port}`);
